@@ -1,5 +1,6 @@
 #!/bin/bash
-
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin
+export PATH
 ipdir=/etc/openvpn/tc/ip
 dbdir=/etc/openvpn/tc/db
 ip="$ifconfig_pool_remote_ip"
@@ -120,8 +121,8 @@ function bwlimit-enable() {
     downrate=1mbit
     uprate=1mbit
   else
-    downrate=10kbit
-    uprate=10kbit
+    downrate=20mbit
+    uprate=20mbit
   fi
 
   # Limit traffic from VPN server to client
